@@ -1,0 +1,16 @@
+archive:~/archive
+dl:~/Downloads
+docs:~/documents
+drc:~/src/github.com/david-r-cox
+ext:/mnt/ext
+gh:~/src/github.com
+github:~/src/github.com
+gl:~/src/gitlab.com
+hm:~/src/github.com/david-r-cox/nixos-config/home-manager
+nc:~/src/github.com/david-r-cox/nixos-config
+nixpkgs:~/src/github.com/NixOS/nixpkgs
+src:~/src
+vitis:/opt/xilinx/Vitis/2023.1
+xilinx:/opt/xilinx
+xmonad:~/.xmonad
+xrt:~/src/github.com/Xilinx/XRT
