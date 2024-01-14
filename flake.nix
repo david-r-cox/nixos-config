@@ -33,17 +33,17 @@
         inherit system;
         config.allowUnfree = false;
       };
-      commonPackages = with pkgs; [
+      commonPackages = [
         nix-search-cli.packages.${system}.default
         cargo2nix.packages.${system}.default
         napali
       ];
       platformPackages = {
-        "x86_64-linux" = with pkgs; [
+        "x86_64-linux" = [
           nix-base.packages.x86_64-linux.pyscipopt
         ];
-        "aarch64-linux" = with pkgs; [ ];
-        "aarch64-darwin" = with pkgs; [ ];
+        "aarch64-linux" = [ ];
+        "aarch64-darwin" = [ ];
       };
     in
     {
@@ -55,10 +55,7 @@
         default = home-manager.defaultPackage.${system};
         homeConfigurations = {
           "david" = home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs {
-              inherit system;
-              config.allowUnfree = false;
-            };
+            inherit pkgs;
             modules = [
               {
                 home.packages = commonPackages
