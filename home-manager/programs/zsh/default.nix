@@ -1,5 +1,8 @@
 { pkgs }:
-let homeManagerPath = "~/src/github.com/david-r-cox/nixos-config/home-manager";
+let
+  base = "~/src/github.com/david-r-cox";
+  privateConfigPath = base + "/private-nixos-config";
+  publicConfigPath = base + "/nixos-config";
 in
 {
   enable = true;
@@ -16,10 +19,10 @@ in
     gl = "git log --all --decorate --oneline --graph --stat";
     gp = "git push";
     gs = "git status";
-    hme = "vim ${homeManagerPath}/flake.nix";
+    hme = "vim ${publicConfigPath}/home-manager/home.nix";
     hmm = "man 5 home-configuration.nix";
     hms = "home-manager switch " +
-      "--flake ${homeManagerPath} " +
+      "--flake ${publicConfigPath} " +
       "--cores 48 --builders 12  --show-trace";
     ls = "lsd";
     lst = "lsd --tree";
@@ -27,6 +30,8 @@ in
     nr = "nix run";
     ns = "nix-search";
     nsn = "nix search nixpkgs";
+    nxe = "vim ${privateConfigPath}/nixos/configuration.nix";
+    nxs = "sudo nixos-rebuild switch --flake ${privateConfigPath} --verbose";
     pbcopy = "xsel --clipboard --input";
     pbpaste = "xsel --clipboard --output";
     vimf = "nvim $(fzf)";
