@@ -29,6 +29,8 @@
     } @inputs:
     flake-utils.lib.eachDefaultSystem (system:
     let
+      inherit (pkgs.stdenv) isLinux;
+      inherit (pkgs.lib) optionals;
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = false;
@@ -65,8 +67,10 @@
             ];
           };
         };
-        nixosConfigurations = { } //
-          private.packages.${system}.nixosConfigurations;
       };
+      nixosConfigurations = { }
+        // optionals isLinux private.nixosConfigurations;
+      apps = { }
+        // optionals isLinux private.apps;
     });
 }

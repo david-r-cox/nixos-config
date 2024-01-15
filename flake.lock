@@ -152,11 +152,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1701680307,
-        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "lastModified": 1705306982,
+        "narHash": "sha256-ZOnxPL+HBfF/qzYFCcuU1fclOejFIgcaI7UXYAEhK2k=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "rev": "c8eb208c255400b59b60ad5de17e9f8f7ef8ae30",
         "type": "github"
       },
       "original": {
@@ -356,6 +356,24 @@
         "type": "github"
       }
     },
+    "nixinate": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
+      },
+      "locked": {
+        "lastModified": 1688141737,
+        "narHash": "sha256-qHrNMYWukOKmKVf6wXOGKj1xxUnOGjvTRbt/PLLXuBE=",
+        "owner": "matthewcroughan",
+        "repo": "nixinate",
+        "rev": "7902ae845e6cc5bd450e510cdf5e009a6e4a44d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "matthewcroughan",
+        "repo": "nixinate",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1705099185,
@@ -464,11 +482,27 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1704842529,
-        "narHash": "sha256-OTeQA+F8d/Evad33JMfuXC89VMetQbsU4qcaePchGr4=",
+        "lastModified": 1653060744,
+        "narHash": "sha256-kfRusllRumpt33J1hPV+CeCCylCXEU7e0gn2/cIM7cY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "eabe8d3eface69f5bb16c18f8662a702f50c20d5",
+        "rev": "dfd82985c273aac6eced03625f454b334daae2e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_9": {
+      "locked": {
+        "lastModified": 1705242415,
+        "narHash": "sha256-a8DRYrNrzTudvO7XHUPNJD89Wbf1ZZT0VbwCsPnHWaE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ea780f3de2d169f982564128804841500e85e373",
         "type": "github"
       },
       "original": {
@@ -481,14 +515,15 @@
     "private": {
       "inputs": {
         "flake-utils": "flake-utils_7",
-        "nixpkgs": "nixpkgs_8"
+        "nixinate": "nixinate",
+        "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1705302364,
-        "narHash": "sha256-JXZTSXfAiifxCnMI2e/Iqcvwq/ROBpKNdy7Ak48pdX0=",
+        "lastModified": 1705306493,
+        "narHash": "sha256-Nk6Po1wNTwoxwGEi/bCtutSicuWGaRNRIM3n1LuQz/k=",
         "ref": "refs/heads/main",
-        "rev": "362f54af93ea51acd08f106817139de85929f66e",
-        "revCount": 6,
+        "rev": "25d0a9fd8d84de9e621c52f96a30182e5c4fd1b7",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://git@github.com/david-r-cox/private-nixos-config"
       },
