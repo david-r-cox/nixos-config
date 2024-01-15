@@ -1,8 +1,10 @@
 { pkgs }:
 let
-  base = "~/src/github.com/david-r-cox";
-  privateConfigPath = base + "/private-nixos-config";
-  publicConfigPath = base + "/nixos-config";
+  local = "~/src/github.com/david-r-cox";
+  remote = "git+ssh://git@github.com/david-r-cox/nixos-config";
+  privateConfigPath = local + "/private-nixos-config";
+  publicConfigPath = local + "/nixos-config";
+  buildOptions = "--cores 48 --builders 12 --show-trace";
 in
 {
   enable = true;
@@ -21,9 +23,8 @@ in
     gs = "git status";
     hme = "vim ${publicConfigPath}/home-manager/home.nix";
     hmm = "man 5 home-configuration.nix";
-    hms = "home-manager switch " +
-      "--flake ${publicConfigPath} " +
-      "--cores 48 --builders 12  --show-trace";
+    hms = "home-manager switch --flake ${publicConfigPath} " + buildOptions;
+    hmsr = "home-manager switch --flake ${remote} " + buildOptions;
     ls = "lsd";
     lst = "lsd --tree";
     nb = "nom build";
@@ -32,6 +33,7 @@ in
     nsn = "nix search nixpkgs";
     nxe = "vim ${privateConfigPath}/nixos/configuration.nix";
     nxs = "sudo nixos-rebuild switch --flake ${privateConfigPath} --verbose";
+    nxsr = "sudo nixos-rebuild switch --flake ${remote} --verbose";
     pbcopy = "xsel --clipboard --input";
     pbpaste = "xsel --clipboard --output";
     vimf = "nvim $(fzf)";
@@ -43,6 +45,7 @@ in
       "nix-shell -p nix-prefetch-git jq --run " +
       "\"nix hash to-sri sha256:\\$(nix-prefetch-git --url \\\"$1\\\" " +
       "--quiet --rev \\\"$2\\\" | jq -r '.sha256')\"' _";
+    sign-store = "nix store sign --key-file /var/cache-priv-key.pem --all";
   };
   plugins = [
     {
