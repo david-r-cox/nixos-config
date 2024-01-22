@@ -58,6 +58,7 @@ with pkgs;
   peaclock # Clock, timer, and stopwatch for the terminal
   pinentry # GnuPG’s interface to passphrase input
   python312 # High-level dynamically-typed programming language
+  rdfind # Removes or hardlinks duplicate files very swiftly
   ripgrep # Recursively searches directories for a regex pattern
   rustup # The Rust toolchain installer
   screen # Window manager that multiplexes a physical terminal
