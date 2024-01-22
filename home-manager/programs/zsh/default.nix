@@ -4,7 +4,7 @@ let
   remote = "git+ssh://git@github.com/david-r-cox/nixos-config";
   privateConfigPath = local + "/private-nixos-config";
   publicConfigPath = local + "/nixos-config";
-  buildOptions = "--cores 48 --builders 12 --show-trace";
+  buildOptions = "--cores 48 --builders 12";
 in
 {
   enable = true;
@@ -27,7 +27,8 @@ in
     hmsr = "home-manager switch --flake ${remote} " + buildOptions;
     ls = "lsd";
     lst = "lsd --tree";
-    nb = "nom build";
+    nb = "nom build " + buildOptions;
+    nd = "nom develop " + buildOptions + " --command zsh";
     nr = "nix run";
     ns = "nix-search";
     nsn = "nix search nixpkgs";
