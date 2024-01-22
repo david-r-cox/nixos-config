@@ -6,6 +6,7 @@ with pkgs;
   bandwhich # CLI utility for displaying current network utilization
   bat # cat(1) clone with syntax highlighting and Git integration
   bottom # Cross-platform graphical process/system monitor
+  btdu # Sampling disk usage profiler for btrfs
   btop # Monitor of resources
   cabal-install # The command-line interface for Cabal and Hackage
   cargo-diet # Optimal include directives for Cargo.toml manifests
