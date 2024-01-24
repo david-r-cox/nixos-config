@@ -6,7 +6,6 @@ with pkgs;
   bandwhich # CLI utility for displaying current network utilization
   bat # cat(1) clone with syntax highlighting and Git integration
   bottom # Cross-platform graphical process/system monitor
-  btdu # Sampling disk usage profiler for btrfs
   btop # Monitor of resources
   cabal-install # The command-line interface for Cabal and Hackage
   cargo-diet # Optimal include directives for Cargo.toml manifests
@@ -73,15 +72,16 @@ with pkgs;
   wireshark # Powerful network protocol analyzer
   yq # jq wrapper for YAML, XML, TOML documents
 ] ++ lib.optionals stdenv.isLinux [
+  btdu # Sampling disk usage profiler for btrfs
   chromium # Open source web browser from Google
   dmenu # Highly customizable menu for the X Window System
-  nmon # AIX & Linux Performance Monitoring tool
   dstat # Versatile resource statistics tool
   firefox # Web browser built from Firefox source tree
   jp2a # Small utility that converts JPG images to ASCII
   ltrace # Library call tracer
   mupdf # Lightweight PDF, XPS, and E-book viewer
   neovide # Graphical user interface for Neovim
+  nmon # AIX & Linux Performance Monitoring tool
   pciutils # For inspecting and manipulating PCI devices
   polybar # Fast and easy-to-use tool for creating status bars
   scrot # Command-line screen capture utility
