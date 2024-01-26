@@ -1,7 +1,7 @@
 {
-  enable = false;
+  enable = true;
   prompt.theme = "pure";
-  terminal.autoTitle = true;
+  terminal.autoTitle = false;
   pmodules = [
     #"completion" # slow, not needed
     #"directory"
@@ -9,7 +9,7 @@
     #"environment"
     ##"git"
     ##"history"
-    "prompt"
+    #"prompt"
     "syntax-highlighting"
     "spectrum"
     #"terminal"
