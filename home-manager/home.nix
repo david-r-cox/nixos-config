@@ -23,11 +23,14 @@ rec {
   programs = {
     bash = import programs/bash;
     broot = import programs/broot;
+    carapace = import programs/carapace;
     fzf = import programs/fzf;
-    git = import programs/git { isCorp = false; };
+    git = import programs/git { isCorp = true; };
     home-manager.enable = true;
     neovim = import programs/neovim { inherit pkgs; };
     nix-index = import programs/nix-index;
+    nushell = import programs/nushell;
+    starship = import programs/starship;
     zsh = import programs/zsh { inherit pkgs; };
   }
   // optionalAttrs isLinux {

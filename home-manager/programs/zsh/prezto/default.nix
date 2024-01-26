@@ -1,5 +1,5 @@
 {
-  enable = true;
+  enable = false;
   prompt.theme = "pure";
   terminal.autoTitle = true;
   pmodules = [
