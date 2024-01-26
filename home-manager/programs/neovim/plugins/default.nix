@@ -35,12 +35,14 @@ with vimPlugins; [
   }
   {
     plugin = nvim-treesitter.withPlugins (p: [
-      p.rust
       p.c
       p.cpp
       p.haskell
+      p.javascript
       p.nix
       p.python
+      p.rust
+      p.tsx
     ]);
     type = "lua";
     config = builtins.readFile (./nvim-treesitter/withAllGrammars/config.lua);
@@ -93,9 +95,11 @@ with vimPlugins; [
       let g:neoformat_enabled_rust = ['neoformat_rust_rustfmt']
       augroup fmt
         autocmd!
+        autocmd BufWritePre *.tsx undojoin | Prettier
         "autocmd BufWritePre *.[ch][pp]? undojoin | Neoformat
         " autocmd BufWritePre *.rs undojoin | Neoformat
-        au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+        " TODO: The following breaks .tsx files:
+        " au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
       augroup END
     '';
   }
@@ -132,17 +136,30 @@ with vimPlugins; [
       })
     '';
   }
+  {
+    plugin = litee-nvim;
+  }
+  {
+    plugin = litee-calltree-nvim;
+    type = "lua";
+    config = ''
+      require('litee.lib').setup({})
+      require('litee.calltree').setup({})
+    '';
+  }
 ] ++ [
   #coc-clangd
   coc-nvim
   coc-rust-analyzer
+  coc-tailwindcss
   diffview-nvim
   nvim-lspconfig
+  nvim-spectre
   plenary-nvim
   twilight-nvim
   vim-clang-format
   vim-llvm
-  nvim-spectre
+  vim-prettier
   vim-startify
 ] ++ [
   # Colorschemes:

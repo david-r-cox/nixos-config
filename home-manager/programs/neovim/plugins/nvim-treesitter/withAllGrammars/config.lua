@@ -5,9 +5,11 @@ require'nvim-treesitter.configs'.setup {
       c,
       cpp,
       haskell,
+      javascript,
       nix,
       python,
       rust,
+      tsx,
     },
   },
 }
