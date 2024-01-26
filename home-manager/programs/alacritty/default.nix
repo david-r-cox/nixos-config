@@ -26,6 +26,6 @@ in
       };
     };
     shell.program = "${pkgs.zsh}/bin/zsh";
-    window.opacity = 1.00;
+    window.opacity = 0.95;
   };
 }
