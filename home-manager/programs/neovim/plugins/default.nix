@@ -160,6 +160,7 @@ with vimPlugins; [
   vim-clang-format
   vim-llvm
   vim-prettier
+  vim-prisma
   vim-startify
 ] ++ [
   # Colorschemes:
