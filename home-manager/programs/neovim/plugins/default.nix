@@ -162,6 +162,7 @@ with vimPlugins; [
   vim-prettier
   vim-prisma
   vim-startify
+  vim-svelte
 ] ++ [
   # Colorschemes:
   {
