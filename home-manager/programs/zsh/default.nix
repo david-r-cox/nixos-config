@@ -69,6 +69,7 @@ in
     # escape # for nix flakes
     setopt NO_NOMATCH
     export SHELL=$(which zsh)
+    preexec() { print -Pn "\e]0;$1 %~\a" }
   '';
   prezto = import ./prezto;
 }
