@@ -54,4 +54,14 @@ set noshowmatch
 nnoremap <leader>, <cmd>windo wincmd =<cr>
 nnoremap <leader>to <cmd>CocOutline<cr>
 
-colorscheme tokyonight-moon
+"colorscheme tokyonight-moon
+colorscheme sonokai
+
+" system clipboard
+nmap <c-c> "+y
+vmap <c-c> "+y
+nmap <c-v> "+p
+inoremap <c-v> <c-r>+
+cnoremap <c-v> <c-r>+
+" use <c-r> to insert original character without triggering things like auto-pairs
+inoremap <c-r> <c-v>
