@@ -41,6 +41,7 @@ with pkgs;
   kind # Kubernetes IN Docker - local clusters for testing Kubernetes
   lazygit # Simple terminal UI for git commands
   lsd # The next gen ls command
+  meld # Visual diff and merge tool
   mods # AI on the command line
   mtr # Network diagnostics tool
   ncdu # Disk usage analyzer with an ncurses interface
@@ -89,6 +90,7 @@ with pkgs;
   xclip # Access the X clipboard from a console application
   xcompmgr # X compositing manage
   xmobar # Minimalistic Text Based Status Bar
+  zfs-prune-snapshots # Remove snapshots from one or more zpools
   xmonad-log # xmonad DBus monitoring solution
   xorg.xhost # server access control program for X
   xsel # Getting and setting the contents of the X selection
