@@ -47,6 +47,7 @@ in
       "\"nix hash to-sri sha256:\\$(nix-prefetch-git --url \\\"$1\\\" " +
       "--quiet --rev \\\"$2\\\" | jq -r '.sha256')\"' _";
     sign-store = "nix store sign --key-file /var/cache-priv-key.pem --all";
+    zsh_history_rescue = "fc -l 1 > ~/.zsh_history_rescue"; # run from an old session
   };
   plugins = [
     {
