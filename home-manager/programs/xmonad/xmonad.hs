@@ -239,7 +239,7 @@ main = do
                            ((mod4Mask .|. shiftMask, xK_g), (xGoToSelected allWindows) xGSConfig'),
                            ((mod4Mask .|. shiftMask, xK_u), gridselectWorkspace def W.view),
                            ((mod4Mask, xK_n), spawnSelected def ["neovide", "firefox", "chromium"]),
-                           ((mod4Mask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.greedyView),
+                           ((mod4Mask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.view),
                            ((mod4Mask .|. shiftMask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.shift),
                            ((mod4Mask, xK_p), spawn "rofi -show combi -modes combi -combi-modes 'window,drun,run'"),
                            ((mod4Mask, xK_c), spawn "rofi -show calc -modi calc -no-show-match -no-sort")
