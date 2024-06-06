@@ -10,6 +10,7 @@ import System.Exit
 import XMonad
 import XMonad.Actions.GridSelect
 import XMonad.Actions.TreeSelect
+import XMonad.Actions.CycleWS
 import XMonad.Config
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, ppOutput)
@@ -44,25 +45,7 @@ xLayouts =
 
 workspaceNodes :: Forest String
 workspaceNodes =
-  [ Node
-      "00"
-      [ Node "00" [],
-        Node "01" [],
-        Node "02" [],
-        Node "03" [],
-        Node "04" [],
-        Node "05" [],
-        Node "06" [],
-        Node "07" [],
-        Node "08" [],
-        Node "09" [],
-        Node "0A" [],
-        Node "0B" [],
-        Node "0C" [],
-        Node "0D" [],
-        Node "0E" [],
-        Node "0F" []
-      ],
+  [ Node "00" [],
     Node "01" [],
     Node "02" [],
     Node "03" [],
@@ -97,11 +80,7 @@ workspaceNodes =
   ]
 
 xWorkspaces :: Forest String
-xWorkspaces =
-  [ Node "R" workspaceNodes,
-    Node "W" workspaceNodes,
-    Node "E" workspaceNodes
-  ]
+xWorkspaces = workspaceNodes
 
 -- "The Pixel Color format is in the form of 0xaarrggbb"
 --     white       = 0xffffffff
