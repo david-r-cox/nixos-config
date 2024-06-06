@@ -33,7 +33,7 @@ endfunction
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 
-set guifont=FiraMono\ Nerd\ Font\ Mono:h9
+set guifont=VictorMono\ Nerd\ Font:h9
 let g:neovide_refresh_rate=60
 "let g:neovide_no_idle=v:false
 "let g:neovide_fullscreen=v:false
