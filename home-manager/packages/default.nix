@@ -56,6 +56,7 @@ with pkgs;
   nmap # Network discovery and security auditing
   nodejs # Event-driven I/O framework for the V8 JavaScript engine
   nvitop # Interactive NVIDIA-GPU process viewer
+  ollama # Run large language models locally
   pbzip2 # Parallel implementation of bzip2 for multi-core machines
   peaclock # Clock, timer, and stopwatch for the terminal
   pinentry # GnuPG’s interface to passphrase input
