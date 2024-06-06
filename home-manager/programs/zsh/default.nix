@@ -71,6 +71,9 @@ in
     setopt NO_NOMATCH
     export SHELL=$(which zsh)
     preexec() { print -Pn "\e]0;$1 %~\a" }
+    bindkey -e # ctrl-a ctrl-e
+    bindkey '^J' backward-word
+    bindkey '^K' forward-word
   '';
   prezto = import ./prezto;
 }
