@@ -20,6 +20,7 @@ with pkgs;
   docker # Pack, ship and run lightweight containers
   docker-compose # Multi-container orchestration for Docker
   duf # Disk Usage/Free Utility
+  ethtool # Utility for controlling network drivers and hardware
   fd # Simple, fast and user-friendly alternative to find
   feh # Light-weight image viewer
   file # Program that shows the type of files
