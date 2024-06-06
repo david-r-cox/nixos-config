@@ -55,6 +55,7 @@ with pkgs;
   nixpkgs-fmt # Nix code formatter for nixpkgs
   nmap # Network discovery and security auditing
   nodejs # Event-driven I/O framework for the V8 JavaScript engine
+  nvitop # Interactive NVIDIA-GPU process viewer
   pbzip2 # Parallel implementation of bzip2 for multi-core machines
   peaclock # Clock, timer, and stopwatch for the terminal
   pinentry # GnuPG’s interface to passphrase input
