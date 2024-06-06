@@ -58,6 +58,7 @@ with pkgs;
   pbzip2 # Parallel implementation of bzip2 for multi-core machines
   peaclock # Clock, timer, and stopwatch for the terminal
   pinentry # GnuPG’s interface to passphrase input
+  pv # Tool for monitoring the progress of data through a pipeline
   python312 # High-level dynamically-typed programming language
   rdfind # Removes or hardlinks duplicate files very swiftly
   ripgrep # Recursively searches directories for a regex pattern
