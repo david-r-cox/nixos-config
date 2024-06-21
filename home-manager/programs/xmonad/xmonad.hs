@@ -12,6 +12,7 @@ import XMonad.Actions.GridSelect
 import XMonad.Actions.TreeSelect
 import XMonad.Actions.CycleWS
 import XMonad.Config
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, ppOutput)
 import XMonad.Hooks.ManageDocks
@@ -202,7 +203,7 @@ main = do
     [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
   xmonad $
     docks $
-      def
+      ewmh def
         { terminal = "alacritty",
           manageHook = manageDocks <+> manageHook def,
           layoutHook = avoidStruts $ xLayouts,
