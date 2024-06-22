@@ -173,11 +173,17 @@ with vimPlugins; [
       vim.keymap.set('x', '<leader>i', ':Ollama<cr>')
     '';
   }
+  {
+    plugin = coc-nvim;
+    type = "lua";
+    config = builtins.readFile (./coc-nvim/config.lua);
+  }
 ] ++ [
   #coc-clangd
-  coc-nvim
   coc-rust-analyzer
   coc-tailwindcss
+  coc-tsserver
+  coc-vimlsp
   diffview-nvim
   nvim-lspconfig
   nvim-spectre

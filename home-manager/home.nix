@@ -55,9 +55,6 @@ rec {
       script = "polybar -c ~/.config/polybar/config.ini &";
     };
   };
-  xdg = optionalAttrs isLinux {
-    configFile = import ./xdg/config;
-  };
   xsession = optionalAttrs isLinux {
     windowManager.xmonad = import ./programs/xmonad { };
   };
