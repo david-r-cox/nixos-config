@@ -23,6 +23,11 @@ let g:ale_fixers = {
   \   'remove_trailing_lines',
   \   'trim_whitespace',
   \  ],
+  \ 'sql': [
+  \   'pgformatter',
+  \   'remove_trailing_lines',
+  \   'trim_whitespace',
+  \  ],
   \ }
 
 

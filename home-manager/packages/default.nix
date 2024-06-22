@@ -61,7 +61,9 @@ with pkgs;
   ollama # Run large language models locally
   pbzip2 # Parallel implementation of bzip2 for multi-core machines
   peaclock # Clock, timer, and stopwatch for the terminal
+  pgformatter # PostgreSQL SQL syntax beautifier
   pinentry # GnuPG’s interface to passphrase input
+  postgresql_16 # Open source object-relational database system
   pv # Tool for monitoring the progress of data through a pipeline
   python312 # High-level dynamically-typed programming language
   rdfind # Removes or hardlinks duplicate files very swiftly

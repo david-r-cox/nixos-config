@@ -187,18 +187,21 @@ with vimPlugins; [
   }
 ] ++ [
   #coc-clangd
-  lsp_signature-nvim
   #coq_nvim
   coc-rust-analyzer
   coc-tailwindcss
   coc-tsserver
   coc-vimlsp
   diffview-nvim
+  lsp_signature-nvim
   nvim-lspconfig
   nvim-spectre
   plenary-nvim
   twilight-nvim
   vim-clang-format
+  vim-dadbod
+  vim-dadbod-completion
+  vim-dadbod-ui
   vim-llvm
   vim-prettier
   vim-prisma
