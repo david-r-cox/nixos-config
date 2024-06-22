@@ -178,8 +178,17 @@ with vimPlugins; [
     type = "lua";
     config = builtins.readFile (./coc-nvim/config.lua);
   }
+  {
+    plugin = indent-blankline-nvim-lua;
+    type = "lua";
+    config = ''
+      require("ibl").setup()
+    '';
+  }
 ] ++ [
   #coc-clangd
+  lsp_signature-nvim
+  #coq_nvim
   coc-rust-analyzer
   coc-tailwindcss
   coc-tsserver
