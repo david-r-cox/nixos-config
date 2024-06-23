@@ -17,11 +17,9 @@ with pkgs;
   commitizen # Tool to create committing rules for projects
   ctop # Top-like interface for container metrics
   deadnix # Find and remove unused code in .nix source files
-  dmidecode # Reads information from the BIOS (SMBIOS/DMI)
   docker # Pack, ship and run lightweight containers
   docker-compose # Multi-container orchestration for Docker
   duf # Disk Usage/Free Utility
-  ethtool # Utility for controlling network drivers and hardware
   fd # Simple, fast and user-friendly alternative to find
   feh # Light-weight image viewer
   file # Program that shows the type of files
@@ -57,12 +55,10 @@ with pkgs;
   nixpkgs-fmt # Nix code formatter for nixpkgs
   nmap # Network discovery and security auditing
   nodejs # Event-driven I/O framework for the V8 JavaScript engine
-  nvitop # Interactive NVIDIA-GPU process viewer
   ollama # Run large language models locally
   pbzip2 # Parallel implementation of bzip2 for multi-core machines
   peaclock # Clock, timer, and stopwatch for the terminal
   pgformatter # PostgreSQL SQL syntax beautifier
-  pinentry # GnuPG’s interface to passphrase input
   postgresql_16 # Open source object-relational database system
   pv # Tool for monitoring the progress of data through a pipeline
   python312 # High-level dynamically-typed programming language
@@ -84,24 +80,28 @@ with pkgs;
   btdu # Sampling disk usage profiler for btrfs
   chromium # Open source web browser from Google
   dmenu # Highly customizable menu for the X Window System
+  dmidecode # Reads information from the BIOS (SMBIOS/DMI)
   dstat # Versatile resource statistics tool
+  ethtool # Utility for controlling network drivers and hardware
   firefox # Web browser built from Firefox source tree
   jp2a # Small utility that converts JPG images to ASCII
   ltrace # Library call tracer
   mupdf # Lightweight PDF, XPS, and E-book viewer
   neovide # Graphical user interface for Neovim
   nmon # AIX & Linux Performance Monitoring tool
+  nvitop # Interactive NVIDIA-GPU process viewer
   pciutils # For inspecting and manipulating PCI devices
+  pinentry # GnuPG’s interface to passphrase input
   polybar # Fast and easy-to-use tool for creating status bars
   scrot # Command-line screen capture utility
   valgrind # Debugging and profiling tool suite
   xclip # Access the X clipboard from a console application
   xcompmgr # X compositing manage
   xmobar # Minimalistic Text Based Status Bar
-  zfs-prune-snapshots # Remove snapshots from one or more zpools
   xmonad-log # xmonad DBus monitoring solution
   xorg.xhost # server access control program for X
   xsel # Getting and setting the contents of the X selection
+  zfs-prune-snapshots # Remove snapshots from one or more zpools
 ] ++ lib.optionals stdenv.isDarwin [ ]
 #++ [
 #  # Overrides
