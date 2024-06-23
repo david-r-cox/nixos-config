@@ -47,7 +47,6 @@ with pkgs;
   mtr # Network diagnostics tool
   ncdu # Disk usage analyzer with an ncurses interface
   neofetch # Fast, highly customizable system info script
-  nerdfonts # Iconic font aggregator, collection, & patcher
   nix-init # Command line tool to generate Nix packages from URLs
   nix-output-monitor # Processes output of Nix commands
   nix-tree # Interactively browse a Nix store paths dependencies
@@ -103,10 +102,16 @@ with pkgs;
   xsel # Getting and setting the contents of the X selection
   zfs-prune-snapshots # Remove snapshots from one or more zpools
 ] ++ lib.optionals stdenv.isDarwin [ ]
+++ [
+  # Overrides
+  (nerdfonts.override {
+    fonts = [
+      "FiraCode"
+      "VictorMono"
+    ];
+  })
+]
 #++ [
-#  # Overrides
-#  # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-#] ++ [
 #  # Scripts
 #  # (writeShellScriptBin "my-hello" ''
 #  #   echo "Hello, ${config.home.username}!"
