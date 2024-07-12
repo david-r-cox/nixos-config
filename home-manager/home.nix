@@ -19,6 +19,7 @@ rec {
   };
 
   fonts.fontconfig.enable = true;
+  nix.package = pkgs.nixVersions.latest;
 
   programs = {
     bash = import programs/bash;
