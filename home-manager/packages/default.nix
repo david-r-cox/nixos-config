@@ -35,6 +35,7 @@ with pkgs;
   grafana-loki # Like Prometheus, but for logs
   haskell-language-server # LSP server for GHC
   htop # Interactive process viewer
+  httm # Interactive, file-level Time Machine-like tool for ZFS/btrfs
   iperf3 # Tool to measure IP bandwidth using UDP or TCP
   jq # Lightweight and flexible command-line JSON processor
   k9s # Kubernetes CLI To Manage Your Clusters In Style
