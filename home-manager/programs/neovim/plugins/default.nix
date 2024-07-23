@@ -225,6 +225,14 @@ with vimPlugins; [
       require("ibl").setup()
     '';
   }
+  {
+    plugin = trouble-nvim;
+    type = "lua";
+    config = ''
+      require("trouble").setup()
+    '';
+  }
+  {
 ] ++ [
   #coc-clangd
   #coq_nvim
