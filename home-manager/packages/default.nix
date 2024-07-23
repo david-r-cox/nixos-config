@@ -101,6 +101,7 @@ with pkgs;
   xmonad-log # xmonad DBus monitoring solution
   xorg.xhost # server access control program for X
   xsel # Getting and setting the contents of the X selection
+  zpool-iostat-viz # "zpool iostats for humans"
   zfs-prune-snapshots # Remove snapshots from one or more zpools
 ] ++ lib.optionals stdenv.isDarwin [ ]
 ++ [
