@@ -43,6 +43,7 @@ with vimPlugins; [
       p.python
       p.rust
       p.tsx
+      p.yaml
     ]);
     type = "lua";
     config = builtins.readFile (./nvim-treesitter/withAllGrammars/config.lua);
@@ -171,6 +172,36 @@ with vimPlugins; [
         }
       })
       vim.keymap.set('x', '<leader>i', ':Ollama<cr>')
+    '';
+  }
+  {
+    plugin = codecompanion-nvim;
+    type = "lua";
+    config = ''
+      require("codecompanion").setup({
+        adapters = {
+          ollama = function()
+            return require("codecompanion.adapters").use("ollama", {
+              schema = {
+                model = {
+                  default = "llama3",
+                },
+              },
+            })
+          end,
+        },
+        strategies = {
+          chat = {
+            adapter = "ollama"
+          },
+          inline = {
+            adapter = "ollama"
+          },
+          agent = {
+            adapter = "anthropic"
+          }
+        }
+      })
     '';
   }
   {

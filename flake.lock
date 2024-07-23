@@ -282,11 +282,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720734513,
-        "narHash": "sha256-neWQ8eNtLTd+YMesb7WjKl1SVCbDyCm46LUgP/g/hdo=",
+        "lastModified": 1721534365,
+        "narHash": "sha256-XpZOkaSJKdOsz1wU6JfO59Rx2fqtcarQ0y6ndIOKNpI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "90ae324e2c56af10f20549ab72014804a3064c7f",
+        "rev": "635563f245309ef5320f80c7ebcb89b2398d2949",
         "type": "github"
       },
       "original": {
@@ -466,16 +466,16 @@
     },
     "nixpkgs_7": {
       "locked": {
-        "lastModified": 1720687749,
-        "narHash": "sha256-nqJ+iK/zyqCJ/YShqCpZ2cJKE1UtjZIEUWLUFZqvxcA=",
-        "owner": "nixos",
+        "lastModified": 1721693962,
+        "narHash": "sha256-/XDwwfJMQ9KSHOFgag+2NJVQwN1J2psjU2O2BwaJw1w=",
+        "owner": "integrated-reasoning",
         "repo": "nixpkgs",
-        "rev": "6af55cb91ca2005516b9562f707bb99c8f79bf77",
+        "rev": "cf087e3a358553e02ba72f39437ddce8aea2b869",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
+        "owner": "integrated-reasoning",
+        "ref": "codecompanion.nvim",
         "repo": "nixpkgs",
         "type": "github"
       }
