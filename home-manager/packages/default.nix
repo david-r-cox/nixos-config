@@ -53,7 +53,7 @@ with pkgs;
   nix-output-monitor # Processes output of Nix commands
   nix-tree # Interactively browse a Nix store paths dependencies
   nixd # Nix language server
-  nixfmt # An opinionated formatter for Nix
+  nixfmt-rfc-style # An opinionated formatter for Nix
   nixpkgs-fmt # Nix code formatter for nixpkgs
   nmap # Network discovery and security auditing
   nodejs # Event-driven I/O framework for the V8 JavaScript engine
