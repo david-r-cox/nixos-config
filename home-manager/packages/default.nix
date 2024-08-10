@@ -2,6 +2,7 @@
 with pkgs;
 [
   aria2 # Multi-protocol, multi-source, command-line download utility
+  atop # Console system performance monitor
   awscli2 # Unified tool to manage your AWS services
   axel # Parallel connections for faster downloading
   bandwhich # CLI utility for displaying current network utilization
