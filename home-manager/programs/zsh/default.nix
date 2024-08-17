@@ -18,6 +18,7 @@ in
     ga = "git add";
     gc = "git commit";
     gd = "git diff";
+    git-resign = "function _git_resign(){ git rebase --exec " git commit - -amend - -no-edit - n - S " -i $1^; }; _git_resign";
     gl = "git log --all --decorate --oneline --graph --stat";
     gp = "git push";
     gs = "git status";
