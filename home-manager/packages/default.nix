@@ -3,7 +3,6 @@ with pkgs;
 [
   act # Run your GitHub Actions locally
   aria2 # Multi-protocol, multi-source, command-line download utility
-  atop # Console system performance monitor
   awscli2 # Unified tool to manage your AWS services
   axel # Parallel connections for faster downloading
   bandwhich # CLI utility for displaying current network utilization
@@ -50,6 +49,7 @@ with pkgs;
   mtr # Network diagnostics tool
   ncdu # Disk usage analyzer with an ncurses interface
   neofetch # Fast, highly customizable system info script
+  neovide # Graphical user interface for Neovim
   nix-init # Command line tool to generate Nix packages from URLs
   nix-output-monitor # Processes output of Nix commands
   nix-tree # Interactively browse a Nix store paths dependencies
@@ -81,6 +81,7 @@ with pkgs;
   wireshark # Powerful network protocol analyzer
   yq # jq wrapper for YAML, XML, TOML documents
 ] ++ lib.optionals stdenv.isLinux [
+  atop # Console system performance monitor
   btdu # Sampling disk usage profiler for btrfs
   chromium # Open source web browser from Google
   dmenu # Highly customizable menu for the X Window System
@@ -91,7 +92,6 @@ with pkgs;
   jp2a # Small utility that converts JPG images to ASCII
   ltrace # Library call tracer
   mupdf # Lightweight PDF, XPS, and E-book viewer
-  neovide # Graphical user interface for Neovim
   nmon # AIX & Linux Performance Monitoring tool
   nvitop # Interactive NVIDIA-GPU process viewer
   pciutils # For inspecting and manipulating PCI devices
@@ -107,7 +107,9 @@ with pkgs;
   xsel # Getting and setting the contents of the X selection
   zpool-iostat-viz # "zpool iostats for humans"
   zfs-prune-snapshots # Remove snapshots from one or more zpools
-] ++ lib.optionals stdenv.isDarwin [ ]
+] ++ lib.optionals stdenv.isDarwin [
+  pinentry_mac # GnuPG’s interface to passphrase input
+]
 ++ [
   # Overrides
   (nerdfonts.override {
