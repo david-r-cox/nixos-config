@@ -30,6 +30,7 @@ in
     lst = "lsd --tree";
     nb = "nom build " + buildOptions;
     nd = "nom develop " + buildOptions + " --command zsh";
+    nix-stray-roots="nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory)\"";
     nr = "nix run";
     ns = "nix-search";
     nsn = "nix search nixpkgs";
