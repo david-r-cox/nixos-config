@@ -175,45 +175,6 @@ with vimPlugins; [
     '';
   }
   {
-    plugin = codecompanion-nvim;
-    type = "lua";
-    config = ''
-            require("codecompanion").setup({
-              adapters = {
-                ollama = function()
-                  return require("codecompanion.adapters").use("ollama", {
-                    schema = {
-                      model = {
-                        default = "llama3",
-                      },
-                    },
-                  })
-                end,
-              },
-              strategies = {
-                chat = {
-                  adapter = "ollama"
-                },
-                inline = {
-                  adapter = "ollama"
-                },
-                agent = {
-                  adapter = "anthropic"
-                }
-              }
-            })
-
-      vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("n", "<LocalLeader>a", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("v", "<LocalLeader>a", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionAdd<cr>", { noremap = true, silent = true })
-
-      -- Expand 'cc' into 'CodeCompanion' in the command line
-      vim.cmd([[cab cc CodeCompanion]])
-    '';
-  }
-  {
     plugin = coc-nvim;
     type = "lua";
     config = builtins.readFile (./coc-nvim/config.lua);
