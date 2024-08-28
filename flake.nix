@@ -10,7 +10,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     napali.url = "https://flakehub.com/f/integrated-reasoning/napali/*.tar.gz";
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
-    nixpkgs.url = "github:integrated-reasoning/nixpkgs/codecompanion.nvim";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     private.url = "git+ssh://git@github.com/david-r-cox/private-nixos-config";
   };
 
