@@ -76,6 +76,7 @@ with pkgs;
   tree # Command to produce a depth indented directory listing
   unzip # Extraction utility for archives compressed in .zip format
   vim # The most popular clone of the VI editor
+  vulnix # NixOS vulnerability scanner
   whois # Intelligent WHOIS client from Debian
   wireshark # Powerful network protocol analyzer
   yq # jq wrapper for YAML, XML, TOML documents
