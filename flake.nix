@@ -9,7 +9,6 @@
     cargo2nix.url = "github:cargo2nix/cargo2nix";
     flake-utils.url = "github:numtide/flake-utils";
     napali.url = "https://flakehub.com/f/integrated-reasoning/napali/*.tar.gz";
-    nix-base.url = "git+ssh://git@gitlab.com/integrated-reasoning/nix-base";
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
     nixpkgs.url = "github:integrated-reasoning/nixpkgs/codecompanion.nvim";
     private.url = "git+ssh://git@github.com/david-r-cox/private-nixos-config";
@@ -21,7 +20,6 @@
     , flake-utils
     , home-manager
     , napali
-    , nix-base
     , nix-search-cli
     , nixpkgs
     , private
@@ -42,7 +40,6 @@
       ];
       platformPackages = {
         "x86_64-linux" = [
-          nix-base.packages.x86_64-linux.pyscipopt
         ];
         "aarch64-linux" = [ ];
         "aarch64-darwin" = [ ];
