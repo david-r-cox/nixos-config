@@ -12,6 +12,8 @@
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     private.url = "git+ssh://git@github.com/david-r-cox/private-nixos-config";
+    nix-fast-build.url = "github:Mic92/nix-fast-build";
+
   };
 
   outputs =
@@ -23,6 +25,7 @@
     , nix-search-cli
     , nixpkgs
     , private
+    , nix-fast-build
     , ...
     } @inputs:
     flake-utils.lib.eachDefaultSystem (system:
@@ -35,6 +38,7 @@
       };
       commonPackages = [
         nix-search-cli.packages.${system}.default
+        nix-fast-build.packages.${system}.default
         cargo2nix.packages.${system}.default
         napali
       ];
