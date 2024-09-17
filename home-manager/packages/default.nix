@@ -23,6 +23,7 @@ with pkgs;
   duf # Disk Usage/Free Utility
   fd # Simple, fast and user-friendly alternative to find
   feh # Light-weight image viewer
+  figlet # Program for making large letters out of ordinary text
   file # Program that shows the type of files
   gcc # GNU Compiler Collection
   gh # Simple command-line interface to the facilities of Github
