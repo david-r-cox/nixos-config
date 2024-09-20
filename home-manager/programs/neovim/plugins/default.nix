@@ -389,11 +389,16 @@ with vimPlugins; [
     plugin = aurora;
     config = builtins.readFile (./aurora/config.vim);
   }
+  bamboo-nvim
   catppuccin-nvim
+  cyberdream-nvim
   edge
   embark-vim
   gruvbox-flat-nvim
+  jellybeans-nvim
   kanagawa-nvim
+  melange-nvim
+  miasma-nvim
   neovim-ayu
   nightfox-nvim
   oceanic-next
