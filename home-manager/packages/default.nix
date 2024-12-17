@@ -13,7 +13,8 @@ with pkgs;
   cargo-diet # Optimal include directives for Cargo.toml manifests
   cargo-udeps # Find unused dependencies in Cargo.toml
   cbc # Mixed integer programming solver
-  clang-tools_16 # Standalone command line tools for C++ development
+  #clang-tools_16 # Standalone command line tools for C++ development
+  llvmPackages_19.clang-tools
   comma # Runs programs without installing them
   commitizen # Tool to create committing rules for projects
   ctop # Top-like interface for container metrics
@@ -25,7 +26,8 @@ with pkgs;
   feh # Light-weight image viewer
   figlet # Program for making large letters out of ordinary text
   file # Program that shows the type of files
-  gcc # GNU Compiler Collection
+  gnat14
+  #gcc # GNU Compiler Collection
   gh # Simple command-line interface to the facilities of Github
   ghc # The Glasgow Haskell Compiler
   gitoxide # Utility for interacting with git repositories
@@ -72,7 +74,7 @@ with pkgs;
   screen # Window manager that multiplexes a physical terminal
   stack # The Haskell Tool Stack
   statix # Lints and suggestions for the nix programming language
-  swiProlog # Prolog compiler and interpreter
+  swi-prolog # Prolog compiler and interpreter
   tokio-console # Debugger for asynchronous Rust code
   tree # Command to produce a depth indented directory listing
   unzip # Extraction utility for archives compressed in .zip format
