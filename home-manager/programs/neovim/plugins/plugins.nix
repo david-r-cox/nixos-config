@@ -54,88 +54,21 @@ with vimPlugins; [
   }
   {
     plugin = markdown-preview-nvim;
-    config = ''
-      " set to 1, nvim will open the preview window after entering the markdown buffer
-      let g:mkdp_auto_start = 0
-
-      " set to 1, the nvim will auto close current preview window when change
-      " from markdown buffer to another buffer
-      let g:mkdp_auto_close = 1
-      let g:mkdp_theme = 'light'
-      let g:mkdp_preview_options = {
-        \ 'mkit': {},
-        \ 'katex': {},
-        \ 'uml': {},
-        \ 'maid': {},
-        \ 'disable_sync_scroll': 1,
-        \ 'sync_scroll_type': 'middle',
-        \ 'hide_yaml_meta': 1,
-        \ 'sequence_diagrams': {},
-        \ 'flowchart_diagrams': {},
-        \ 'content_editable': v:false,
-        \ 'disable_filename': 0,
-        \ 'toc': {}
-        \ }
-    '';
+    config = builtins.readFile (./markdown-preview-nvim/config.vim);
   }
   {
     plugin = neoformat;
-    config = ''
-      " custom setting for clangformat
-      let g:neoformat_cpp_clangformat = {
-          \ 'exe': 'clang-format',
-          \ 'args': ['--style="{IndentWidth: 2}"']
-      \}
-      let g:neoformat_enabled_cpp = ['clangformat']
-      let g:neoformat_enabled_c = ['clangformat']
-      let g:neoformat_rust_rustfmt = {
-          \ 'exe': 'rustfmt',
-          \ 'args': [ '--edition 2021'],
-          \ 'replace': 1,
-      \}
-      let g:neoformat_enabled_rust = ['neoformat_rust_rustfmt']
-      augroup fmt
-        autocmd!
-        autocmd BufWritePre *.tsx undojoin | Prettier
-        "autocmd BufWritePre *.[ch][pp]? undojoin | Neoformat
-        " autocmd BufWritePre *.rs undojoin | Neoformat
-        " TODO: The following breaks .tsx files:
-        " au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-      augroup END
-    '';
+    config = builtins.readFile (./neoformat/config.vim);
   }
   {
     plugin = smart-splits-nvim;
     type = "lua";
-    config = ''
-      vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
-      vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
-      vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
-      vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
-      -- moving between splits
-      vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
-      vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
-      vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
-      vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
-      -- swapping buffers between windows
-      vim.keymap.set('n', '<leader><leader>h', require('smart-splits').swap_buf_left)
-      vim.keymap.set('n', '<leader><leader>j', require('smart-splits').swap_buf_down)
-      vim.keymap.set('n', '<leader><leader>k', require('smart-splits').swap_buf_up)
-      vim.keymap.set('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
-    '';
+    config = builtins.readFile (./smart-splits-nvim/config.lua);
   }
   {
     plugin = trim-nvim;
     type = "lua";
-    config = ''
-      require('trim').setup({
-        ft_blocklist = {"markdown"},
-        --patterns = {
-        --  [[%s/\(\n\n\)\n\+/\1/]],
-        --},
-        trim_on_write = true,
-      })
-    '';
+    config = builtins.readFile (./trim-nvim/config.lua);
   }
   {
     plugin = litee-nvim;
@@ -143,36 +76,12 @@ with vimPlugins; [
   {
     plugin = litee-calltree-nvim;
     type = "lua";
-    config = ''
-      require('litee.lib').setup({})
-      require('litee.calltree').setup({})
-    '';
+    config = builtins.readFile (./litee-calltree-nvim/config.lua);
   }
   {
     plugin = ollama-nvim;
     type = "lua";
-    config = ''
-      require('ollama').setup({
-        model = "llama3",
-        url = "http://127.0.0.1:11434",
-        serve = {
-          on_start = false,
-          command = "ollama",
-          args = { "serve" },
-          stop_command = "pkill",
-          stop_args = { "-SIGTERM", "ollama" },
-        },
-        prompts = {
-          Sample_Prompt = {
-            prompt = "This is a sample prompt that receives $input and $sel(ection), among others.",
-            input_label = "> ",
-            model = "llama3",
-            action = "display",
-          }
-        }
-      })
-      vim.keymap.set('x', '<leader>i', ':Ollama<cr>')
-    '';
+    config = builtins.readFile (./ollama-nvim/config.lua);
   }
   {
     plugin = coc-nvim;
@@ -182,235 +91,22 @@ with vimPlugins; [
   {
     plugin = indent-blankline-nvim-lua;
     type = "lua";
-    config = ''
-      require("ibl").setup()
-    '';
+    config = builtins.readFile (./indent-blankline-nvim/config.lua);
   }
   {
     plugin = trouble-nvim;
     type = "lua";
-    config = ''
-      require("trouble").setup()
-    '';
+    config = builtins.readFile (./trouble-nvim/config.lua);
   }
   {
     plugin = dressing-nvim;
     type = "lua";
-    config = ''
-      require("dressing").setup({
-        input = {
-          -- Set to false to disable the vim.ui.input implementation
-          enabled = true,
-
-          -- Default prompt string
-          default_prompt = "Input",
-
-          -- Trim trailing `:` from prompt
-          trim_prompt = true,
-
-          -- Can be 'left', 'right', or 'center'
-          title_pos = "left",
-
-          -- When true, input will start in insert mode.
-          start_in_insert = true,
-
-          -- These are passed to nvim_open_win
-          border = "rounded",
-          -- 'editor' and 'win' will default to being centered
-          relative = "cursor",
-
-          -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-          prefer_width = 40,
-          width = nil,
-          -- min_width and max_width can be a list of mixed types.
-          -- min_width = {20, 0.2} means "the greater of 20 columns or 20% of total"
-          max_width = { 140, 0.9 },
-          min_width = { 20, 0.2 },
-
-          buf_options = {},
-          win_options = {
-            -- Disable line wrapping
-            wrap = false,
-            -- Indicator for when text exceeds window
-            list = true,
-            listchars = "precedes:…,extends:…",
-            -- Increase this for more context when text scrolls off the window
-            sidescrolloff = 0,
-          },
-
-          -- Set to `false` to disable
-          mappings = {
-            n = {
-              ["<Esc>"] = "Close",
-              ["<CR>"] = "Confirm",
-            },
-            i = {
-              ["<C-c>"] = "Close",
-              ["<CR>"] = "Confirm",
-              ["<Up>"] = "HistoryPrev",
-              ["<Down>"] = "HistoryNext",
-            },
-          },
-
-          override = function(conf)
-            -- This is the config that will be passed to nvim_open_win.
-            -- Change values here to customize the layout
-            return conf
-          end,
-
-          -- see :help dressing_get_config
-          get_config = nil,
-        },
-        select = {
-          -- Set to false to disable the vim.ui.select implementation
-          enabled = true,
-
-          -- Priority list of preferred vim.select implementations
-          backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
-
-          -- Trim trailing `:` from prompt
-          trim_prompt = true,
-
-          -- Options for telescope selector
-          -- These are passed into the telescope picker directly. Can be used like:
-          -- telescope = require('telescope.themes').get_ivy({...})
-          telescope = nil,
-
-          -- Options for fzf selector
-          fzf = {
-            window = {
-              width = 0.5,
-              height = 0.4,
-            },
-          },
-
-          -- Options for fzf-lua
-          fzf_lua = {
-            -- winopts = {
-            --   height = 0.5,
-            --   width = 0.5,
-            -- },
-          },
-
-          -- Options for nui Menu
-          nui = {
-            position = "50%",
-            size = nil,
-            relative = "editor",
-            border = {
-              style = "rounded",
-            },
-            buf_options = {
-              swapfile = false,
-              filetype = "DressingSelect",
-            },
-            win_options = {
-              winblend = 0,
-            },
-            max_width = 80,
-            max_height = 40,
-            min_width = 40,
-            min_height = 10,
-          },
-
-          -- Options for built-in selector
-          builtin = {
-            -- Display numbers for options and set up keymaps
-            show_numbers = true,
-            -- These are passed to nvim_open_win
-            border = "rounded",
-            -- 'editor' and 'win' will default to being centered
-            relative = "editor",
-
-            buf_options = {},
-            win_options = {
-              cursorline = true,
-              cursorlineopt = "both",
-            },
-
-            -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-            -- the min_ and max_ options can be a list of mixed types.
-            -- max_width = {140, 0.8} means "the lesser of 140 columns or 80% of total"
-            width = nil,
-            max_width = { 140, 0.8 },
-            min_width = { 40, 0.2 },
-            height = nil,
-            max_height = 0.9,
-            min_height = { 10, 0.2 },
-
-            -- Set to `false` to disable
-            mappings = {
-              ["<Esc>"] = "Close",
-              ["<C-c>"] = "Close",
-              ["<CR>"] = "Confirm",
-            },
-
-            override = function(conf)
-              -- This is the config that will be passed to nvim_open_win.
-              -- Change values here to customize the layout
-              return conf
-            end,
-          },
-
-          -- Used to override format_item. See :help dressing-format
-          format_item_override = {},
-
-          -- see :help dressing_get_config
-          get_config = nil,
-        },
-      })
-    '';
+    config = builtins.readFile (./dressing-nvim/config.lua);
   }
   {
     plugin = codecompanion-nvim;
     type = "lua";
-    config = ''
-            require("codecompanion").setup({
-              adapters = {
-                ollama = function()
-                  return require("codecompanion.adapters").extend("ollama", {
-                    schema = {
-                      model = {
-                        default = "mistral-small:22b-instruct-2409-q2_K",
-                      },
-                      num_ctx = {
-                        default = 8196,
-                      },
-                      num_predict = {
-                        default = -1,
-                      },
-                    },
-                  })
-                end,
-                anthropic = function()
-                  return require("codecompanion.adapters").extend("anthropic", {
-                    env = {
-                      api_key = "cmd:cat ~/.anthropic",
-                    }})
-                end,
-              },
-              strategies = {
-                chat = {
-                  adapter = "anthropic"
-                },
-                inline = {
-                  adapter = "ollama"
-                },
-                agent = {
-                  adapter = "ollama"
-                }
-              }
-            })
-
-      vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("n", "<LocalLeader>a", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("v", "<LocalLeader>a", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionAdd<cr>", { noremap = true, silent = true })
-
-      -- Expand 'cc' into 'CodeCompanion' in the command line
-      vim.cmd([[cab cc CodeCompanion]])
-    '';
+    config = builtins.readFile (./codecompanion-nvim/config.lua);
   }
 ] ++ [
   nvim-cmp # TODO: configure
