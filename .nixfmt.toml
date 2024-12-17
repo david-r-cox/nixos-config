@@ -1,0 +1,22 @@
+# Formatting configuration for nixfmt
+
+# Maximum line length
+max_line_length = 100
+
+# Indentation settings
+indent_size = 2
+indent_lists = false
+
+# Spacing settings
+align_matches = true
+align_bindings = true
+spaced_operators = true
+spaces_in_lists = false
+spaces_in_attrsets = false
+
+# Line break settings
+break_all_subexps = false
+break_if_subexps = true
+break_let_subexps = true
+break_list_subexps = true
+break_merge_attrs = false

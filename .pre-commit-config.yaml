@@ -1,0 +1,46 @@
+# Pre-commit configuration
+repos:
+  - repo: local
+    hooks:
+      - id: nixfmt
+        name: nixfmt
+        description: Format Nix files
+        entry: nixfmt
+        language: system
+        files: \.nix$
+        
+      - id: nix-flake-check
+        name: Nix Flake Check
+        description: Check Nix flake
+        entry: nix flake check
+        language: system
+        pass_filenames: false
+        
+      - id: deadnix
+        name: deadnix
+        description: Find dead Nix code
+        entry: deadnix
+        language: system
+        files: \.nix$
+        
+      - id: statix
+        name: statix
+        description: Lint Nix code
+        entry: statix check
+        language: system
+        files: \.nix$
+        
+      - id: commit-msg
+        name: Check commit message
+        description: Check commit message format
+        entry: |
+          #!/bin/sh
+          # Regex for conventional commits
+          regex="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z \-]+\))?: .+$"
+          if ! grep -qE "$regex" "$1"; then
+            echo "Invalid commit message format. Please use conventional commits format:"
+            echo "type(scope): description"
+            exit 1
+          fi
+        language: system
+        stages: [commit-msg]
