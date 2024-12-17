@@ -27,7 +27,11 @@ This NixOS configuration implements a modular, declarative system configuration 
 
 3. Apply the configuration:
    ```bash
+   # For system configuration:
    sudo nixos-rebuild switch --flake .#desktop
+
+   # For home-manager configuration:
+   hms  # Alias for: home-manager switch --flake . --cores 48 --builders 12
    ```
 
 ## Documentation Sections

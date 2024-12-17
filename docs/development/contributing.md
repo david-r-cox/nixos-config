@@ -100,6 +100,17 @@ docs(readme): update installation instructions
 
 ## Testing
 
+### Shell Aliases
+
+The following shell aliases are available for common operations:
+
+- `hms`: Build and switch home-manager configuration (`home-manager switch --flake . --cores 48 --builders 12`)
+- `hmsr`: Build and switch using remote configuration
+- `nxs`: Build and switch system configuration
+- `nxsr`: Build and switch system configuration using remote
+- `hme`: Edit home-manager configuration
+- `nxe`: Edit system configuration
+
 ### Required Tests
 
 1. **Configuration Build**
