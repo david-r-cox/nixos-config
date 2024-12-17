@@ -1,1 +1,1 @@
-{ ... }: import ./config.nix
+import ./config.nix

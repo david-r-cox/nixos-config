@@ -1,1 +1,1 @@
-{ ... }: import ./session.nix
+import ./session.nix
