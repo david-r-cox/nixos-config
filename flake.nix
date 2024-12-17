@@ -11,6 +11,7 @@
     napali.url = "https://flakehub.com/f/integrated-reasoning/napali/*.tar.gz";
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    irnixpkgs.url = "github:integrated-reasoning/nixpkgs/codecompanion.nvim";
     private.url = "git+ssh://git@github.com/david-r-cox/private-nixos-config";
     nix-fast-build.url = "github:Mic92/nix-fast-build";
 
@@ -24,6 +25,7 @@
     , napali
     , nix-search-cli
     , nixpkgs
+    , irnixpkgs
     , private
     , nix-fast-build
     , ...
@@ -32,10 +34,19 @@
     let
       inherit (pkgs.stdenv) isLinux;
       inherit (pkgs.lib) optionals;
+      irpkgs = import irnixpkgs {
+        inherit system;
+        config.allowUnfree = false;
+      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = false;
       };
+      pkgsWithPlugin = pkgs.extend (_: prev: {
+        vimPlugins = prev.vimPlugins // {
+          inherit (irpkgs.vimPlugins) codecompanion-nvim;
+        };
+      });
       commonPackages = [
         nix-search-cli.packages.${system}.default
         nix-fast-build.packages.${system}.default
@@ -58,7 +69,7 @@
         default = home-manager.defaultPackage.${system};
         homeConfigurations = {
           "david" = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+            pkgs = pkgsWithPlugin;
             modules = [
               {
                 home.packages = commonPackages
