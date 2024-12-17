@@ -28,6 +28,15 @@ rec {
     fzf = import programs/fzf;
     git = import programs/git { isCorp = true; };
     home-manager.enable = true;
+    lazygit = {
+      enable = true;
+      package = pkgs.lazygit;
+      settings = {
+        git = {
+          overrideGpg = true;
+        };
+      };
+    };
     neovim = import programs/neovim { inherit pkgs; };
     nix-index = import programs/nix-index;
     nushell = import programs/nushell;
@@ -36,7 +45,7 @@ rec {
   }
   // optionalAttrs isLinux {
     alacritty = import programs/alacritty {
-      colorscheme = import ./colorschemes/ayu_dark.nix;
+      colorscheme = import ./colorschemes/nightfox.nix;
       inherit pkgs;
     };
     rofi = import ./programs/rofi {
