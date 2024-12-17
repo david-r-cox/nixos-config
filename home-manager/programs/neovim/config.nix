@@ -6,7 +6,7 @@
   defaultEditor = true;
   extraConfig = builtins.readFile (./extraConfig.vim);
   #extraLuaConfig = builtins.readFile (./extraLuaConfig.lua);
-  plugins = import ./plugins { inherit (pkgs) vimPlugins; };
+  plugins = import ./plugins/plugins.nix { inherit (pkgs) vimPlugins; };
   coc.settings = {
     suggest = {
       noselect = true;
