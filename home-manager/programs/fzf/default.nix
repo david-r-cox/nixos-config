@@ -1,4 +1,1 @@
-{
-  enable = true;
-  enableZshIntegration = true;
-}
+{ ... }: import ./config.nix

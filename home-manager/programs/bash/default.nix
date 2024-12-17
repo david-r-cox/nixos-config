@@ -1,3 +1,1 @@
-{
-  enable = true;
-}
+{ ... }: import ./config.nix

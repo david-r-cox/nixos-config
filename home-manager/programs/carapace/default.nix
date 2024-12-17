@@ -1,4 +1,1 @@
-{
-  enable = true;
-  enableNushellIntegration = true;
-}
+{ ... }: import ./config.nix
