@@ -115,7 +115,11 @@ The following shell aliases are available for common operations:
 
 1. **Configuration Build**
    ```bash
+   # Test system configuration
    nixos-rebuild build --flake .#desktop
+   
+   # Test home-manager configuration
+   home-manager build --flake . --cores 48 --builders 12
    ```
 
 2. **Flake Check**
