@@ -25,7 +25,7 @@ in
         style = "Bold Italic";
       };
     };
-    shell.program = "${pkgs.zsh}/bin/zsh";
+    terminal.shell.program = "${pkgs.zsh}/bin/zsh";
     window.opacity = 0.95;
   };
 }
