@@ -9,6 +9,7 @@ require'nvim-treesitter.configs'.setup {
       nix,
       python,
       rust,
+      tlaplus,
       tsx,
     },
   },

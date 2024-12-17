@@ -170,3 +170,6 @@ endfunction
 
 " Map the function to a key combination for visual mode
 vnoremap <silent> <leader>c :call YankSelectionAsCodeBlock()<CR>
+
+" Prettier shortcut
+nnoremap <silent> <leader>p :Prettier<CR>

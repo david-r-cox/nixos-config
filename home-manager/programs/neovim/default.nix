@@ -51,7 +51,7 @@
         rootPatterns = [ "Cargo.toml" ];
       };
     };
-    #clangd.inlayHints.enable = false; # TODO: Not applying?
+    clangd.inlayHints.enable = true;
     clangd.fallbackFlags = [ "-std=c++20" ];
     semanticTokens.enable = true;
   };
