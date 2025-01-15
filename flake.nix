@@ -41,6 +41,9 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = false;
+        config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+          #"google-chrome"
+        ];
       };
       pkgsWithPlugin = pkgs.extend (_: prev: {
         vimPlugins = prev.vimPlugins // {
