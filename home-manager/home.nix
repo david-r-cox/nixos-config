@@ -13,7 +13,7 @@ rec {
     homeDirectory =
       if isDarwin then "/Users/${username}"
       else "/home/${username}";
-    file = import ./dotfiles;
+    file = import ./dotfiles { inherit pkgs; };
     sessionVariables = import ./session;
     packages = import ./packages { inherit pkgs; };
   };
