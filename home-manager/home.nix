@@ -16,6 +16,7 @@ rec {
     file = import ./dotfiles { inherit pkgs; };
     sessionVariables = import ./session;
     packages = import ./packages { inherit pkgs; };
+    enableNixpkgsReleaseCheck = false;
   };
 
   fonts.fontconfig.enable = true;
