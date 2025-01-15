@@ -443,8 +443,12 @@ with vimPlugins; [
     config = builtins.readFile (./aurora/config.vim);
   }
   bamboo-nvim
+  boo-colorscheme-nvim
   catppuccin-nvim
+  citruszest-nvim
   cyberdream-nvim
+  deepwhite-nvim
+  doom-one-nvim
   edge
   embark-vim
   gruvbox-flat-nvim
@@ -452,10 +456,15 @@ with vimPlugins; [
   kanagawa-nvim
   melange-nvim
   miasma-nvim
+  modus-themes-nvim
   neovim-ayu
+  nightfly
   nightfox-nvim
   oceanic-next
+  rose-pine
   sonokai
+  substrata-nvim
   tokyonight-nvim
+  vim-code-dark
   zephyr-nvim
 ]
