@@ -112,7 +112,6 @@ with pkgs;
   xorg.xhost # server access control program for X
   xsel # Getting and setting the contents of the X selection
   yq # jq wrapper for YAML, XML, TOML documents
-  zfs-prune-snapshots # Remove snapshots from one or more zpools
   zpool-iostat-viz # "zpool iostats for humans"
 ] ++ lib.optionals stdenv.isLinux [
 tmux # Terminal multiplexer
