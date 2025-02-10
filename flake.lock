@@ -204,11 +204,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737575492,
-        "narHash": "sha256-qa/D3NC1JoApnUuLrq1gseBmIxeg6icm/ojPgggMDVQ=",
+        "lastModified": 1737754282,
+        "narHash": "sha256-jpr0ysc2PIAhNg1fwPBOGP7VkL4ZBhHy9UzvtGM2K/E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cefb1889b96ddd1dac3dd4734e894f4cadab7802",
+        "rev": "1b9fe46e9fc3575eeb63ef42d73144e397593904",
         "type": "github"
       },
       "original": {
@@ -219,16 +219,16 @@
     },
     "irnixpkgs": {
       "locked": {
-        "lastModified": 1728515866,
-        "narHash": "sha256-sL/NiIv9oVj2tEPtHjf0RYcSu6Krbez5iE67z/I9dFg=",
+        "lastModified": 1737761598,
+        "narHash": "sha256-55aAY2OvNZ8fq4SL40J19HuHjgqnwdFHruYSjeKNbds=",
         "owner": "integrated-reasoning",
         "repo": "nixpkgs",
-        "rev": "e2b00fcccce4c63bf7dd03fc6a597d2ffd7078b7",
+        "rev": "ffe8eab11d35be6613d486eefcb327e6d4d18179",
         "type": "github"
       },
       "original": {
         "owner": "integrated-reasoning",
-        "ref": "codecompanion.nvim",
+        "ref": "magenta.nvim",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -422,10 +422,10 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1737525964,
-        "narHash": "sha256-3wFonKmNRWKq1himW9N3TllbeGIHFACI5vmLpk6moF8=",
+        "lastModified": 1737717945,
+        "narHash": "sha256-ET91TMkab3PmOZnqiJQYOtSGvSTvGeHoegAv4zcTefM=",
         "ref": "nixpkgs-unstable",
-        "rev": "5757bbb8bd7c0630a0cc4bb19c47e588db30b97c",
+        "rev": "ecd26a469ac56357fd333946a99086e992452b6a",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs"
@@ -471,10 +471,10 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1737525964,
-        "narHash": "sha256-3wFonKmNRWKq1himW9N3TllbeGIHFACI5vmLpk6moF8=",
+        "lastModified": 1737557748,
+        "narHash": "sha256-BaMuhctP1x00+8cBE2cJveJQb70/tWHI50MHj/ZrtOY=",
         "ref": "nixpkgs-unstable",
-        "rev": "5757bbb8bd7c0630a0cc4bb19c47e588db30b97c",
+        "rev": "606996d74f6e2a12635d41c1bf58bfc7ea3bb5ec",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs"
@@ -493,11 +493,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1737604984,
-        "narHash": "sha256-DDb0BgEfa3oJhQXbFSSDtRqoKn1gLmpxrWfRsj7FUTU=",
+        "lastModified": 1737681569,
+        "narHash": "sha256-SkVX0fwh82gUt24dFyaSLLCc88qokVP7GAE5/loNlgU=",
         "ref": "refs/heads/main",
-        "rev": "1ab829a87adc9c54b02ab96eadae28b8ec93b950",
-        "revCount": 91,
+        "rev": "37cfdab59dec449522b7aa6e08d8f991c5d44293",
+        "revCount": 92,
         "type": "git",
         "url": "ssh://git@github.com/david-r-cox/private-nixos-config"
       },
