@@ -2,6 +2,7 @@
 with pkgs;
 [
   act # Run your GitHub Actions locally
+  aider-chat # AI pair programming in your terminal
   aria2 # Multi-protocol, multi-source, command-line download utility
   atop # Console system performance monitor
   awscli2 # Unified tool to manage your AWS services
