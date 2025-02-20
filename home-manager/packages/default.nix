@@ -25,7 +25,6 @@ with pkgs;
   dmidecode # Reads information from the BIOS (SMBIOS/DMI)
   docker # Pack, ship and run lightweight containers
   docker-compose # Multi-container orchestration for Docker
-  dstat # Versatile resource statistics tool
   duf # Disk Usage/Free Utility
   ethtool # Utility for controlling network drivers and hardware
   fd # Simple, fast and user-friendly alternative to find
