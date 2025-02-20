@@ -16,9 +16,9 @@
       MODE=1
 
       # Pre-defined static wallpaper paths
-      STATIC_CENTER="$WP_DIR/6zlp1jd1ar691.png"
-      STATIC_LEFT="$WP_DIR/6zlp1jd1ar691.png"
-      STATIC_RIGHT="$WP_DIR/6zlp1jd1ar691.png"
+      STATIC_CENTER="$WP_DIR/white.png"
+      STATIC_LEFT="$WP_DIR/white.png"
+      STATIC_RIGHT="$WP_DIR/white.png"
 
       # Sleep duration for each mode (in seconds)
       RANDOM_SLEEP=60

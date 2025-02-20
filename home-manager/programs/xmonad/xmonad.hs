@@ -222,5 +222,6 @@ main = do
                            ((mod4Mask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.view),
                            ((mod4Mask .|. shiftMask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.shift),
                            ((mod4Mask, xK_p), spawn "rofi -show combi -modes combi -combi-modes 'window,drun,run'"),
-                           ((mod4Mask, xK_c), spawn "rofi -show calc -modi calc -no-show-match -no-sort")
+                           ((mod4Mask, xK_c), spawn "rofi -show calc -modi calc -no-show-match -no-sort"),
+                           ((mod4Mask, xK_i), spawn "find-cursor")
                          ]

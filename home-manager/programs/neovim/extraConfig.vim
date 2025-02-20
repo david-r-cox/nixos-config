@@ -55,7 +55,7 @@ set noshowmatch
 nnoremap <leader>, <cmd>windo wincmd =<cr>
 nnoremap <leader>to <cmd>CocOutline<cr>
 
-colorscheme catppuccin-macchiato
+colorscheme kanagawa-lotus
 
 " system clipboard
 nmap <c-c> "+y
