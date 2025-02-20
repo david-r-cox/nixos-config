@@ -204,11 +204,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739051380,
-        "narHash": "sha256-p1QSLO8DJnANY+ppK7fjD8GqfCrEIDjso1CSRHsXL7Y=",
+        "lastModified": 1739992710,
+        "narHash": "sha256-9kEscmGnXHjSgcqyJR4TzzHhska4yz1inSQs6HuO9qU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5af1b9a0f193ab6138b89a8e0af8763c21bbf491",
+        "rev": "1c189f011447810af939a886ba7bee33532bb1f9",
         "type": "github"
       },
       "original": {
@@ -422,10 +422,10 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1739019272,
-        "narHash": "sha256-7Fu7oazPoYCbDzb9k8D/DdbKrC3aU1zlnc39Y8jy/s8=",
+        "lastModified": 1739863612,
+        "narHash": "sha256-UbtgxplOhFcyjBcNbTVO8+HUHAl/WXFDOb6LvqShiZo=",
         "ref": "nixpkgs-unstable",
-        "rev": "fa35a3c8e17a3de613240fea68f876e5b4896aec",
+        "rev": "632f04521e847173c54fa72973ec6c39a371211c",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs"
@@ -471,10 +471,10 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1739019272,
-        "narHash": "sha256-7Fu7oazPoYCbDzb9k8D/DdbKrC3aU1zlnc39Y8jy/s8=",
+        "lastModified": 1739863612,
+        "narHash": "sha256-UbtgxplOhFcyjBcNbTVO8+HUHAl/WXFDOb6LvqShiZo=",
         "ref": "nixpkgs-unstable",
-        "rev": "fa35a3c8e17a3de613240fea68f876e5b4896aec",
+        "rev": "632f04521e847173c54fa72973ec6c39a371211c",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs"
@@ -493,11 +493,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1739058448,
-        "narHash": "sha256-C1bRgQQM9kpdLaK0n+KpjZGfJJPpu4ysCeQso1mppQs=",
+        "lastModified": 1740005505,
+        "narHash": "sha256-/KFTApMVfGvFnw/QSGzNaDXDNFBoWPuWsI2KaijFYw4=",
         "ref": "refs/heads/main",
-        "rev": "127ce1513955abe127fabc4464a38c2f99109173",
-        "revCount": 97,
+        "rev": "330317ca132ce4b76f5c6edc890f9c760c899b58",
+        "revCount": 99,
         "type": "git",
         "url": "ssh://git@github.com/david-r-cox/private-nixos-config"
       },

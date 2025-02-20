@@ -11,7 +11,7 @@
     napali.url = "https://flakehub.com/f/integrated-reasoning/napali/*.tar.gz";
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
     nixpkgs.url = "git+https://github.com/NixOS/nixpkgs?shallow=1&ref=nixpkgs-unstable";
-    irnixpkgs.url = "github:integrated-reasoning/nixpkgs/codecompanion.nvim";
+    irnixpkgs.url = "github:integrated-reasoning/nixpkgs/magenta.nvim";
     private.url = "git+ssh://git@github.com/david-r-cox/private-nixos-config";
     nix-fast-build.url = "github:Mic92/nix-fast-build";
 
@@ -47,7 +47,7 @@
       };
       pkgsWithPlugin = pkgs.extend (_: prev: {
         vimPlugins = prev.vimPlugins // {
-          inherit (irpkgs.vimPlugins) codecompanion-nvim;
+          inherit (irpkgs.vimPlugins) magenta-nvim;
         };
       });
       commonPackages = [

@@ -484,6 +484,7 @@ with vimPlugins; [
   vim-dadbod-ui
   vim-llvm
   nvim-treesitter-parsers.tlaplus
+  magenta-nvim
   vim-prettier
   vim-prisma
   vim-startify
