@@ -506,7 +506,6 @@ with vimPlugins; [
   edge
   embark-vim
   gruvbox-flat-nvim
-  jellybeans-nvim
   kanagawa-nvim
   melange-nvim
   miasma-nvim
