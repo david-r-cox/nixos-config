@@ -93,12 +93,12 @@ xWorkspaces = workspaceNodes
 xTreeConf =
   TSConfig
     { ts_hidechildren = True,
-      ts_background = 0xa0000000,
+      ts_background = 0xffffffff,
       ts_font = "xft:Berkley Mono:pixelsize=16",
-      ts_node = (0xff000000, 0xff363636),
-      ts_nodealt = (0xff000000, 0xff504d4d),
-      ts_highlight = (0xffffffff, 0xffe53366),
-      ts_extra = 0xffffdd33,
+      ts_node = (0xff363636, 0xffffffff),
+      ts_nodealt = (0xff504d4d, 0xffffffaa),
+      ts_highlight = (0xffe53366, 0xffffaaaa),
+      ts_extra = 0xff000000,
       ts_node_width = 40,
       ts_node_height = 30,
       ts_originX = 10,
