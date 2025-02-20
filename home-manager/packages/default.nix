@@ -68,6 +68,7 @@ with pkgs;
   nerd-fonts.fira-code # Extension of Fira Mono with programming ligatures
   nerd-fonts.fira-mono # Mozilla typeface, dotted zero
   nerd-fonts.victor-mono # Programming font with cursive italics, ligatures
+  nix-bisect # Bisect nix builds
   nix-init # Command line tool to generate Nix packages from URLs
   nix-output-monitor # Processes output of Nix commands
   nix-tree # Interactively browse a Nix store paths dependencies
