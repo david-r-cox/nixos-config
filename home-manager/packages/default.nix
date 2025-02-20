@@ -32,6 +32,7 @@ with pkgs;
   feh # Light-weight image viewer
   figlet # Program for making large letters out of ordinary text
   file # Program that shows the type of files
+  find-cursor # XLib program to highlight the cursor position
   firefox # Web browser built from Firefox source tree
   # gcc # GNU Compiler Collection
   gh # Simple command-line interface to the facilities of Github
