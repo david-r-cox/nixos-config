@@ -214,14 +214,18 @@ main = do
           workspaces = toWorkspaces xWorkspaces,
           logHook = workspaceHistoryHook <+> dynamicLogWithPP (xLogHook dbus)
         }
-        `additionalKeys` [ ((mod4Mask, xK_g), (xGoToSelected visibleWindows) xGSConfig'),
-                           ((mod4Mask, xK_u), (xGoToSelected visibleWindowsOnActiveMonitor) xGSConfig),
-                           ((mod4Mask .|. shiftMask, xK_g), (xGoToSelected allWindows) xGSConfig'),
-                           ((mod4Mask .|. shiftMask, xK_u), gridselectWorkspace def W.view),
-                           ((mod4Mask, xK_n), spawnSelected def ["neovide", "firefox", "chromium"]),
-                           ((mod4Mask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.view),
-                           ((mod4Mask .|. shiftMask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.shift),
-                           ((mod4Mask, xK_p), spawn "rofi -show combi -modes combi -combi-modes 'window,drun,run'"),
-                           ((mod4Mask, xK_c), spawn "rofi -show calc -modi calc -no-show-match -no-sort"),
-                           ((mod4Mask, xK_i), spawn "find-cursor")
-                         ]
+      `additionalKeys`
+      [ ((mod4Mask, xK_g), (xGoToSelected visibleWindows) xGSConfig'),
+        ((mod4Mask, xK_u), (xGoToSelected visibleWindowsOnActiveMonitor) xGSConfig),
+        ((mod4Mask .|. shiftMask, xK_g), (xGoToSelected allWindows) xGSConfig'),
+        ((mod4Mask .|. shiftMask, xK_u), gridselectWorkspace def W.view),
+        ((mod4Mask, xK_n), spawnSelected def ["neovide", "firefox", "chromium"]),
+        ((mod4Mask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.view),
+        ((mod4Mask .|. shiftMask, xK_f), treeselectWorkspace xTreeConf xWorkspaces W.shift),
+        ((mod4Mask, xK_p), spawn "rofi -show combi -modes combi -combi-modes 'window,drun,run'"),
+        ((mod4Mask, xK_c), spawn "rofi -show calc -modi calc -no-show-match -no-sort"),
+        ((mod4Mask, xK_i), spawn "find-cursor"),
+        ((mod4Mask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view)),  -- Primary
+        ((mod4Mask, xK_r), screenWorkspace 1 >>= flip whenJust (windows . W.view)),  -- Right
+        ((mod4Mask, xK_e), screenWorkspace 2 >>= flip whenJust (windows . W.view))   -- Left
+      ]
