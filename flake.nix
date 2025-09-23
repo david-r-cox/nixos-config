@@ -6,7 +6,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    cargo2nix.url = "github:cargo2nix/cargo2nix";
+    #cargo2nix.url = "github:cargo2nix/cargo2nix";
     flake-utils.url = "github:numtide/flake-utils";
     napali.url = "https://flakehub.com/f/integrated-reasoning/napali/*.tar.gz";
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
@@ -19,7 +19,7 @@
 
   outputs =
     { self
-    , cargo2nix
+    #, cargo2nix
     , flake-utils
     , home-manager
     , napali
@@ -53,7 +53,7 @@
       commonPackages = [
         nix-search-cli.packages.${system}.default
         nix-fast-build.packages.${system}.default
-        cargo2nix.packages.${system}.default
+        #cargo2nix.packages.${system}.default
         napali
       ];
       platformPackages = {
