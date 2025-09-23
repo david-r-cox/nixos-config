@@ -515,6 +515,18 @@ with vimPlugins;
     '';
   }
 
+  {
+    plugin = telescope-grouped-keymaps-nvim;
+    type = "lua";
+    config = ''
+      vim.keymap.set("n", "<leader>K", function()
+        local grouped = require("telescope-grouped-keymaps")
+        grouped.setup()
+        grouped.picker_grouped_keymaps({})
+      end, { desc = "Grouped Keymaps" })
+    '';
+  }
+
 ]
 ++ [
   nvim-cmp # TODO: configure
