@@ -49,6 +49,16 @@ rec {
       nushell = import programs/nushell;
       starship = import programs/starship;
       zsh = import programs/zsh { inherit pkgs; };
+      emacs = {
+        enable = true;
+        package = pkgs.emacs;
+        extraPackages = epkgs: with epkgs; [
+          evil
+          use-package
+          which-key
+          magit
+        ];
+      };
     }
     // optionalAttrs isLinux {
       alacritty = import programs/alacritty {
