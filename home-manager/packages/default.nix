@@ -12,6 +12,7 @@ with pkgs;
   btop # Monitor of resources
   cabal-install # The command-line interface for Cabal and Hackage
   cargo-diet # Optimal include directives for Cargo.toml manifests
+  haskellPackages.hoogle # Hoogle for local Haskell search
   cargo-udeps # Find unused dependencies in Cargo.toml
   cbc # Mixed integer programming solver
   comma # Runs programs without installing them
@@ -25,7 +26,7 @@ with pkgs;
   file # Program that shows the type of files
   # gcc # GNU Compiler Collection
   gh # Simple command-line interface to the facilities of Github
-  ghc # The Glasgow Haskell Compiler
+  haskell.compiler.ghc966 # The Glasgow Haskell Compiler
   git-lfs # Git extension for versioning large files
   gitoxide # Utility for interacting with git repositories
   glab # GitLab CLI tool bringing GitLab to your command line
@@ -34,7 +35,7 @@ with pkgs;
   gnupg # GNU Privacy Guard
   gping # Ping, but with a graph
   grafana-loki # Like Prometheus, but for logs
-  haskell-language-server # LSP server for GHC
+  (haskell-language-server.override { supportedGhcVersions = [ "966" ]; }) # LSP server for GHC
   htop # Interactive process viewer
   httm # Interactive, file-level Time Machine-like tool for ZFS/btrfs
   iperf3 # Tool to measure IP bandwidth using UDP or TCP
@@ -87,7 +88,8 @@ with pkgs;
   wireshark # Powerful network protocol analyzer
   xcompmgr # X compositing manage
   yq # jq wrapper for YAML, XML, TOML documents
-] ++ lib.optionals stdenv.isLinux [
+]
+++ lib.optionals stdenv.isLinux [
   atop # Console system performance monitor
   btdu # Sampling disk usage profiler for btrfs
   chromium # Open source web browser from Google
@@ -118,7 +120,8 @@ with pkgs;
   xorg.xhost # server access control program for X
   xsel # Getting and setting the contents of the X selection
   zpool-iostat-viz # "zpool iostats for humans"
-] ++ lib.optionals stdenv.isDarwin [
+]
+++ lib.optionals stdenv.isDarwin [
   pinentry_mac # GnuPG’s interface to passphrase input
 ]
 #++ [
