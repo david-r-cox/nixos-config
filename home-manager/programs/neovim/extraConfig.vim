@@ -35,7 +35,7 @@ endfunction
 "let g:ale_completion_autoimport = 1
 let g:ale_disable_lsp = 1
 
-set guifont=VictorMono\ Nerd\ Font:h9
+set guifont=VictorMono\ Nerd\ Font:h12
 let g:neovide_refresh_rate=60
 "let g:neovide_no_idle=v:false
 "let g:neovide_fullscreen=v:false
@@ -56,7 +56,7 @@ set noshowmatch
 nnoremap <leader>, <cmd>windo wincmd =<cr>
 nnoremap <leader>to <cmd>CocOutline<cr>
 
-colorscheme kanagawa-lotus
+colorscheme kanagawa
 
 " system clipboard
 nmap <c-c> "+y
@@ -66,6 +66,7 @@ inoremap <c-v> <c-r>+
 cnoremap <c-v> <c-r>+
 " use <c-r> to insert original character without triggering things like auto-pairs
 inoremap <c-r> <c-v>
+nnoremap <leader>v <C-v>
 
 command! -nargs=0 ReloadConfig source ~/.config/nvim/init.lua
 nnoremap <leader>rr :ReloadConfig<CR>

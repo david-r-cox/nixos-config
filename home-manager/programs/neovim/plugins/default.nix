@@ -576,6 +576,7 @@ with vimPlugins;
   edge
   embark-vim
   gruvbox-flat-nvim
+  gruvbox
   kanagawa-nvim
   melange-nvim
   miasma-nvim
