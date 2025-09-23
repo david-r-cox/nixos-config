@@ -1,5 +1,8 @@
+{ ... }:
 {
-  enable = true;
-  settings.modal = true;
-  # TODO: live-preview, themes
+  programs.broot = {
+    enable = true;
+    settings.modal = true;
+    # TODO: live-preview, themes
+  };
 }
