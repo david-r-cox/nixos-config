@@ -30,7 +30,7 @@ in
     lst = "lsd --tree";
     nb = "nom build " + buildOptions;
     nd = "nom develop " + buildOptions + " --command zsh";
-    nix-stray-roots="nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory)\"";
+    nix-stray-roots = "nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory)\"";
     nr = "nix run";
     ns = "nix-search";
     nsn = "nix search nixpkgs";
@@ -44,10 +44,11 @@ in
     # Compute the nix hash.
     # Usage: nix-repo-hash https://github.com/cli/cli v2.20.2
     # Returns: sha256-atUC6vb/tOO2GapMjTqFi4qjDAdSf2F8v3gZuzyt+9Q=
-    nix-repo-hash = "sh -c '" +
-      "nix-shell -p nix-prefetch-git jq --run " +
-      "\"nix hash to-sri sha256:\\$(nix-prefetch-git --url \\\"$1\\\" " +
-      "--quiet --rev \\\"$2\\\" | jq -r '.sha256')\"' _";
+    nix-repo-hash =
+      "sh -c '"
+      + "nix-shell -p nix-prefetch-git jq --run "
+      + "\"nix hash to-sri sha256:\\$(nix-prefetch-git --url \\\"$1\\\" "
+      + "--quiet --rev \\\"$2\\\" | jq -r '.sha256')\"' _";
     sign-store = "nix store sign --key-file /var/cache-priv-key.pem --all";
     zsh_history_rescue = "fc -l 1 > ~/.zsh_history_rescue"; # run from an old session
   };
@@ -76,6 +77,13 @@ in
     bindkey -e # ctrl-a ctrl-e
     bindkey '^J' backward-word
     bindkey '^K' forward-word
+    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+      . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    fi
+
+    if [[ $TERM != "dumb" ]]; then
+      eval "$(/Users/david/.nix-profile/bin/starship init zsh)"
+    fi
   '';
   prezto = import ./prezto;
 }

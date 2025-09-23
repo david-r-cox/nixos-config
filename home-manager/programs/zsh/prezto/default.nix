@@ -3,7 +3,7 @@
   prompt.theme = "pure";
   terminal.autoTitle = false;
   pmodules = [
-    #"completion" # slow, not needed
+    "completion" # slow, not needed (but seems to fix "command not found: compdef")?
     #"directory"
     #"editor"
     #"environment"
