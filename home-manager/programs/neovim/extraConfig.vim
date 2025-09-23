@@ -33,6 +33,7 @@ endfunction
 "let g:ale_disable_lsp = 'auto'
 "let g:ale_completion_enabled = 1
 "let g:ale_completion_autoimport = 1
+let g:ale_disable_lsp = 1
 
 set guifont=VictorMono\ Nerd\ Font:h9
 let g:neovide_refresh_rate=60
