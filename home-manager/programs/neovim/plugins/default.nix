@@ -1,5 +1,6 @@
 { vimPlugins }:
-with vimPlugins; [
+with vimPlugins;
+[
   {
     plugin = aerial-nvim; # TODO: Broken?
     config = builtins.readFile (./aerial-nvim/config.vim);
@@ -35,9 +36,12 @@ with vimPlugins; [
   }
   {
     plugin = nvim-treesitter.withPlugins (p: [
+      p.agda
       p.c
       p.cpp
+      p.elixir
       p.haskell
+      p.html
       p.javascript
       p.nix
       p.python
@@ -464,7 +468,55 @@ with vimPlugins; [
       }
     '';
   }
-] ++ [
+  {
+    plugin = cornelis;
+    config = ''
+      let g:cornelis_use_global_binary = 1
+
+      au BufRead,BufNewFile *.agda call AgdaFiletype()
+      au QuitPre *.agda :CornelisCloseInfoWindows
+      function! AgdaFiletype()
+          nnoremap <buffer> <leader>l :CornelisLoad<CR>
+          nnoremap <buffer> <leader>R :CornelisRefine<CR>
+          nnoremap <buffer> <leader>d :CornelisMakeCase<CR>
+          nnoremap <buffer> <leader>, :CornelisTypeContext<CR>
+          nnoremap <buffer> <leader>. :CornelisTypeContextInfer<CR>
+          nnoremap <buffer> <leader>n :CornelisSolve<CR>
+          nnoremap <buffer> <leader>A :CornelisAuto<CR>
+          nnoremap <buffer> gd        :CornelisGoToDefinition<CR>
+          nnoremap <buffer> [/        :CornelisPrevGoal<CR>
+          nnoremap <buffer> ]/        :CornelisNextGoal<CR>
+          nnoremap <buffer> <C-A>     :CornelisInc<CR>
+          nnoremap <buffer> <C-X>     :CornelisDec<CR>
+      endfunction
+
+      au BufWritePost *.agda execute "normal! :CornelisLoad\<CR>"
+
+      function! CornelisLoadWrapper()
+        if exists(":CornelisLoad") ==# 2
+          CornelisLoad
+        endif
+      endfunction
+
+      au BufReadPre *.agda call CornelisLoadWrapper()
+      au BufReadPre *.lagda* call CornelisLoadWrapper()
+
+      let g:cornelis_agda_prefix = "<Tab>" " Replace with your desired prefix
+      inoremap <localleader> <C-O>:call cornelis#prompt_input()<CR>
+    '';
+  }
+
+  {
+    # See also: https://blog.ielliott.io/agda-nixos
+    plugin = which-key-nvim; # for cornelis
+    type = "lua";
+    config = ''
+      require("which-key").setup()
+    '';
+  }
+
+]
+++ [
   nvim-cmp # TODO: configure
   coc-clangd
   #coq_nvim
@@ -484,14 +536,18 @@ with vimPlugins; [
   vim-dadbod-ui
   vim-llvm
   nvim-treesitter-parsers.tlaplus
+  nvim-treesitter-parsers.agda
+  #agda-vim # vs nvim-agda, vim-agda?
   magenta-nvim
   vim-prettier
   vim-prisma
   vim-startify
+  #vim-which-key # for cornelis
   vim-svelte
   nvim-dap-rr
   nvim-dap-ui
-] ++ [
+]
+++ [
   # Colorschemes:
   {
     plugin = aurora;
