@@ -527,6 +527,7 @@ with vimPlugins;
   diffview-nvim
   lsp_signature-nvim
   nvim-lspconfig
+  telescope_hoogle
   nvim-spectre
   plenary-nvim
   twilight-nvim

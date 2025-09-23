@@ -48,6 +48,17 @@
       pkgsWithPlugin = pkgs.extend (_: prev: {
         vimPlugins = prev.vimPlugins // {
           inherit (irpkgs.vimPlugins) magenta-nvim;
+
+          telescope-grouped-keymaps-nvim = pkgs.vimUtils.buildVimPlugin {
+            pname = "telescope-grouped-keymaps.nvim";
+            version = "2025-06-28";
+            src = pkgs.fetchFromGitHub {
+              owner = "JulianNymark";
+              repo = "telescope-grouped-keymaps.nvim";
+              rev = "517a407c7f36f1e36da7e97959b56d93114ce48d";
+              sha256 = "sha256-kmGGFUo3+pIakBGgJ3e/vzsYkxEDLOooIY9CquUo/ao=";
+            };
+          };
         };
       });
       commonPackages = [
