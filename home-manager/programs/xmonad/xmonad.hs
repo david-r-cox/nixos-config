@@ -1,4 +1,6 @@
 import qualified Codec.Binary.UTF8.String as UTF8
+import Control.Concurrent (threadDelay)
+import Control.Monad (replicateM_)
 import qualified DBus as D
 import qualified DBus.Client as D
 import Data.Default
@@ -180,6 +182,23 @@ xWithSelectedWindow windowSubset callback conf = do
 xGoToSelected :: X WindowSet -> GSConfig Window -> X ()
 xGoToSelected windowSubset = xWithSelectedWindow windowSubset $ windows . W.focusWindow
 
+flashBorder :: X ()
+flashBorder = withFocused $ \w -> do
+  focusedColor <- asks (focusedBorderColor . config)
+  io $ do
+    dpy <- openDisplay ""
+    replicateM_ 3 $ do
+      setWindowBorder dpy w 0x000000  -- black
+      flush dpy
+      threadDelay 50000  -- 50ms
+      setWindowBorder dpy w 0xffffff  -- white
+      flush dpy
+      threadDelay 50000  -- 50ms
+    -- Restore original focused color
+    setWindowBorder dpy w (read focusedColor :: Pixel)
+    flush dpy
+    closeDisplay dpy
+
 xLogHook :: D.Client -> PP
 xLogHook dbus = def {ppOutput = dbusOutput dbus}
 
@@ -225,6 +244,7 @@ main = do
         ((mod4Mask, xK_p), spawn "rofi -show combi -modes combi -combi-modes 'window,drun,run'"),
         ((mod4Mask, xK_c), spawn "rofi -show calc -modi calc -no-show-match -no-sort"),
         ((mod4Mask, xK_i), spawn "find-cursor"),
+        ((mod4Mask, xK_m), flashBorder),  -- Flash border black/white
         ((mod4Mask, xK_w), screenWorkspace 0 >>= flip whenJust (windows . W.view)),  -- Primary
         ((mod4Mask, xK_r), screenWorkspace 1 >>= flip whenJust (windows . W.view)),  -- Right
         ((mod4Mask, xK_e), screenWorkspace 2 >>= flip whenJust (windows . W.view))   -- Left
