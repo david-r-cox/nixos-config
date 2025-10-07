@@ -14,6 +14,7 @@ rec {
     ./programs/carapace
     ./programs/fzf
     ./programs/git
+    ./programs/ghostty
     ./programs/neovim
     ./programs/nix-index
     ./programs/nushell
