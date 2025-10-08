@@ -8,6 +8,7 @@ rec {
   imports = [
     ./dotfiles
     ./session
+    ./programs/aerospace
     ./programs/alacritty
     ./programs/bash
     ./programs/broot

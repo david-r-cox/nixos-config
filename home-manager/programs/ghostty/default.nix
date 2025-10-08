@@ -64,6 +64,26 @@ let
     keybind = ctrl+shift+arrow_right=text:\x1b[1;6C
     keybind = alt+arrow_right=text:\x1b\x1b[C
 
+    # Allow AeroSpace to handle Cmd+[1-9] workspace switching
+    keybind = super+1=unbind
+    keybind = super+2=unbind
+    keybind = super+3=unbind
+    keybind = super+4=unbind
+    keybind = super+5=unbind
+    keybind = super+6=unbind
+    keybind = super+7=unbind
+    keybind = super+8=unbind
+    keybind = super+9=unbind
+    keybind = super+digit_1=unbind
+    keybind = super+digit_2=unbind
+    keybind = super+digit_3=unbind
+    keybind = super+digit_4=unbind
+    keybind = super+digit_5=unbind
+    keybind = super+digit_6=unbind
+    keybind = super+digit_7=unbind
+    keybind = super+digit_8=unbind
+    keybind = super+digit_9=unbind
+
     # Match custom iTerm2 split navigation (Cmd+J / Cmd+K)
     keybind = super+j=goto_split:previous
     keybind = super+k=goto_split:next

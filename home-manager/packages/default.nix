@@ -122,6 +122,7 @@ with pkgs;
   zpool-iostat-viz # "zpool iostats for humans"
 ]
 ++ lib.optionals stdenv.isDarwin [
+  aerospace # Tree-based tiling window manager for macOS
   pinentry_mac # GnuPG’s interface to passphrase input
 ]
 #++ [
