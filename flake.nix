@@ -67,9 +67,17 @@
             };
           }
         );
+        nixFastBuildPackage =
+          nix-fast-build.packages.${system}.default.overrideAttrs (_: {
+            # Avoid copying the entire repo when evaluating the input
+            src = builtins.path {
+              path = nix-fast-build.outPath;
+              name = "nix-fast-build-source";
+            };
+          });
         commonPackages = [
           nix-search-cli.packages.${system}.default
-          nix-fast-build.packages.${system}.default
+          nixFastBuildPackage
           #cargo2nix.packages.${system}.default
           napali
         ];
